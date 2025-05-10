@@ -55,7 +55,7 @@ tree-link-platform/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Green-city-project.git
+git clone https://github.com/Felicien407/Green-city-project.git
 cd Green-city-project
 
 Setup backend

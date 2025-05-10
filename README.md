@@ -1,6 +1,6 @@
-# 🌱 TreeLink Platform
+# 🌱 SeedLink Platform
 
-TreeLink is an online platform that connects individuals, schools, NGOs, and communities seeking tree plants with cooperatives, individuals, and organizations supplying seedlings across Rwanda.
+SeedLink is an online platform that connects individuals, schools, NGOs, and communities seeking tree plants with cooperatives, individuals, and organizations supplying seedlings across Rwanda.
 
 ---
 
@@ -55,8 +55,8 @@ tree-link-platform/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/treelink-platform.git
-cd treelink-platform
+git clone https://github.com/yourusername/Green-city-project.git
+cd Green-city-project
 
 Setup backend
 

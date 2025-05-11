@@ -10,7 +10,6 @@ function App() {
       <div className='w-full h-screen bg-white overflow-x-hidden flex flex-col'> {/* This is the whole application */}
         {/* This is the navbar */}
         <Home />
-        
       </div>
     </>
   )

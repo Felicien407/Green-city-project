@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div className='w-370 h-10/11 bg-gray-100 rounded-xl flex items-center justify-evenly'>
+    <div className='w-370 h-[40em] bg-gray-100 rounded-xl flex items-center justify-evenly'>
       <div className='w-1/3 h-2/3 bg-gray-500 flex flex-col items-center justify-center'>
         <h1 className='text-4xl font-bold relative -top-2 text-center text-gray-700'>
           Find the Perfect Seeds for Your Garden

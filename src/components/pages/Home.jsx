@@ -2,6 +2,7 @@ import Hero from "../Hero"
 import Card from "./items/card"
 import SeedList from "./items/SeedList"
 import Navbar from "../Navbar"
+import Testimonial from "./items/Testimonial"
 
 const Home = () => {
   return (
@@ -77,6 +78,15 @@ const Home = () => {
       <div className="relative w-10/12 h-auto mt-20">
         <div className="w-full h-[6em]"></div>
         <SeedList />
+      </div>
+
+      {/* Testimonials all our users who have already used the website. */}
+      <div className="w-full h-[27em] bg-gray-800 relative top-40">
+        <Testimonial />
+      </div>
+
+      <div className="w-full h-[30em] bg-green-600 relative top-50">
+
       </div>
 
     </div>

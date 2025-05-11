@@ -1,82 +1,12 @@
-# 🌱 SeedLink Platform
+# React + Vite
 
-SeedLink is an online platform that connects individuals, schools, NGOs, and communities seeking tree plants with cooperatives, individuals, and organizations supplying seedlings across Rwanda.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- 👥 User roles: **Tree Seekers** and **Suppliers**
-- 🌳 Suppliers can list available tree species, quantity, and prices
-- 🔍 Seekers can search and filter tree types by location, species, and availability
-- 📬 Booking and request system to connect seekers with suppliers
-- 💬 Real-time chat between seekers and suppliers (via Socket.IO)
-- 🔐 Authentication & authorization using JWT
-- 🗺️ Supplier geolocation (optional with Mapbox or Leaflet)
+## Expanding the ESLint configuration
 
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js
-- TailwindCSS
-- React Router
-- Axios
-- Socket.IO Client
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB (MongoDB Atlas)
-- Socket.IO
-- JWT Authentication
-
-### Deployment
-- Frontend: Vercel
-- Backend: Render or Railway
-- Database: MongoDB Atlas
-
----
-
-## 📁 Project Structure
-
-tree-link-platform/
-├── client/ # React Frontend
-├── server/ # Express Backend
-
----
-
-
----
-
-## 📦 Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Felicien407/Green-city-project.git
-cd Green-city-project
-
-Setup backend
-
-cd server
-npm install
-touch .env
-
-Setup from end
-
-cd client
-npm install
-npm run dev
-
----
-
-API Endpoints
-
-POST   /api/auth/register         # Register user
-POST   /api/auth/login            # Login user
-GET    /api/trees                 # Fetch all listings
-POST   /api/trees                 # Create new tree listing (supplier only)
-POST   /api/messages              # Send a message
-GET    /api/messages/:userId     # Get messages between users
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

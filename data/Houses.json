@@ -1,0 +1,30 @@
+ [
+   {
+      "name" : "Front Fountain Villa",
+      "image": "/images/front_fountain_villa.jfif",
+      "location": "Street 324st Saint Mall Front",
+      "price": "23,000,400",
+      "description": "This house is very lovely have a fountain and Inside is where the luxury resides. It have poor inside many 7 rooms, leaving room, Dinner room, basement which is very suitable with different things. So, It have been fun. What I can say it is fabulous and very rich in everything"
+   },
+   {
+      "name" : "Front Pool Villa",
+      "image": "/images/front_pool_villa.jfif",
+      "location": "Street 324st Saint Mall Front",
+      "price": "23,000,400",
+      "description": "This house is very lovely have a fountain and Inside is where the luxury resides. It have poor inside many 7 rooms, leaving room, Dinner room, basement which is very suitable with different things. So, It have been fun. What I can say it is fabulous and very rich in everything"
+   },
+   {
+      "name" : "Larger Mansion Villa",
+      "image": "/images/larger_villa.jfif",
+      "location": "Street 324st Saint Mall Front",
+      "price": "23,000,400",
+      "description": "This house is very lovely have a fountain and Inside is where the luxury resides. It have poor inside many 7 rooms, leaving room, Dinner room, basement which is very suitable with different things. So, It have been fun. What I can say it is fabulous and very rich in everything"
+   },
+   {
+      "name" : "Million Mega Villa",
+      "image": "/images/hotel_villa.jfif",
+      "location": "Street 324st Saint Mall Front",
+      "price": "23,000,400",
+      "description": "This house is very lovely have a fountain and Inside is where the luxury resides. It have poor inside many 7 rooms, leaving room, Dinner room, basement which is very suitable with different things. So, It have been fun. What I can say it is fabulous and very rich in everything"
+   }
+]

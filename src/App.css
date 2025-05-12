@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+:root{
+   --hero-bg-img: url(./assets/images/larger_villa.jfif);
+}

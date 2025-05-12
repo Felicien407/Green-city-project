@@ -1,0 +1,44 @@
+[
+   {
+      "id": "1",
+      "image": "/images/rice_seed.jfif",
+      "name": "Rice",
+      "short_d": "Thailand rice seed"
+   },
+   {
+      "id": "2",
+      "image": "/images/rice_seed.jfif",
+      "name": "Beetroot",
+      "short_d": "England beetroot"
+   },
+   {
+      "id": "3",
+      "image": "/images/rice_seed.jfif",
+      "name": "Potatoes",
+      "short_d": "Musanze Potatoes"
+   },
+   {
+      "id": "4",
+      "image": "/images/rice_seed.jfif",
+      "name": "Cassava",
+      "short_d": "Kayonza White Cassava"
+   },
+   {
+      "id": "5",
+      "image": "/images/rice_seed.jfif",
+      "name": "Cabbage",
+      "short_d": "Muhanga cabbage seed"
+   },
+   {
+      "id": "6",
+      "image": "/images/rice_seed.jfif",
+      "name": "Carrot",
+      "short_d": "Rulindo carrot"
+   },
+   {
+      "id": "7",
+      "image": "/images/rice_seed.jfif",
+      "name": "Corn",
+      "short_d": "Kicukiro Corn Organisation seed"
+   }
+]

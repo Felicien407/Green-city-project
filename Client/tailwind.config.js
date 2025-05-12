@@ -1,4 +1,4 @@
-import seedLink from "seedLink";
+import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [seedLink],
-  seedLink: {
+  plugins: [daisyui],
+  daisyui: {
     themes: [
       "light",
       "dark",

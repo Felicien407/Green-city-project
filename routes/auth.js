@@ -2,10 +2,12 @@ const express = require('express');
 const crypto = require('crypto'); // for generating tokens
 const User = require('../models/User'); // Corrected path
 const { sendVerificationEmail } = require('../services/emailService'); // Adjust path if needed
+const bcrypt = require('bcryptjs');;
+// const jwt = require('jsonwebtoken');
 
+const jwt = require('jsonwebtoken');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-
+// const bcrypt = require('bcryptjs');
 
 router.get('/signup', async (req, res) => {
     try {
@@ -126,7 +128,7 @@ router.post('/resend-verification', async (req, res) => {
         // Generate new token
         const verificationToken = crypto.randomBytes(32).toString('hex');
         user.emailVerificationToken = verificationToken;
-        user.emailVerificationTokenExpires = Date.now() + 3600000; // 1 hour
+        user.emailVerificationTokenExpires = Date.now() + 18000; // 1 hour
         await user.save({ validateBeforeSave: false });
 
         await sendVerificationEmail(user.email, verificationToken);
@@ -138,5 +140,144 @@ router.post('/resend-verification', async (req, res) => {
         res.status(500).json({ message: 'Server error while resending verification email.' });
     }
 });
+ // Password Reset 
+router.post('/reset-password', async (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ message: 'Email is required.' });
+    }
+
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        // Generate reset token
+        const resetToken = crypto.randomBytes(32).toString('hex');
+        user.resetPasswordToken = resetToken;
+        user.resetPasswordTokenExpires = Date.now() + 3600000; // 1 hour
+        await user.save({ validateBeforeSave: false });
+
+        // Send reset email
+        await sendVerificationEmail(user.email, resetToken, 'reset'); // Adjust email template logic if needed
+
+        res.status(200).json({ message: 'Password reset email sent. Please check your inbox.' });
+    } catch (error) {
+        console.error('Reset Password Error:', error);
+        res.status(500).json({ message: 'Server error during password reset.' });
+    }
+});
+
+// Password Update
+router.post('/update-password', async (req, res) => {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+        return res.status(400).json({ message: 'Token and new password are required.' });
+    }
+
+    try {
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordTokenExpires: { $gt: Date.now() }, // Check if token is valid
+        });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid or expired token.' });
+        }
+
+        // Update password
+        user.password = newPassword;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordTokenExpires = undefined;
+        await user.save();
+
+        res.status(200).json({ message: 'Password updated successfully.' });
+    } catch (error) {
+        console.error('Update Password Error:', error);
+        res.status(500).json({ message: 'Server error during password update.' });
+    }
+});
+
+
+//Profile Managament
+
+router.get('/profile', async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password'); // Exclude password
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Fetch Profile Error:', error);
+        res.status(500).json({ message: 'Server error while fetching profile.' });
+    }
+});
+
+
+
+//updates the user logged profile
+
+
+router.put('/profile', async (req, res) => {
+    const { name, email, number } = req.body;
+
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        // Update fields
+        if (name) user.name = name;
+        if (email) user.email = email;
+        if (number) user.number = number;
+
+        await user.save();
+        res.status(200).json({ message: 'Profile updated successfully.', user });
+    } catch (error) {
+        console.error('Update Profile Error:', error);
+        res.status(500).json({ message: 'Server error while updating profile.' });
+    }
+});
+
+
+// Logout USer
+
+router.post('/logout', (req, res) => {
+    // Invalidate token on the client side (e.g., remove it from storage)
+    res.status(200).json({ message: 'Logged out successfully.' });
+});
+
+//Refersh-Token using JWT token
+
+router.post('/refresh-token', async (req, res) => {
+    const { refreshToken } = req.body;
+
+    if (!refreshToken) {
+        return res.status(400).json({ message: 'Refresh token is required.' });
+    }
+
+    try {
+        // Verify refresh token
+        const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        // Issue new token
+        const newToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        res.status(200).json({ token: newToken });
+    } catch (error) {
+        console.error('Refresh Token Error:', error);
+        res.status(500).json({ message: 'Server error during token refresh.' });
+    }
+});
+
+
 
 module.exports = router;

@@ -32,6 +32,7 @@ SeedLink is an online platform that connects individuals, schools, NGOs, and com
 - Socket.IO
 - JWT Authentication
 
+
 ### Deployment
 - Frontend: Vercel
 - Backend: Render or Railway
@@ -46,7 +47,14 @@ tree-link-platform/
 ├── server/ # Express Backend
 
 ---
+# JWT Secrets
 
+JWT_SECRET=your_jwt_secret_key
+JWT_REFRESH_SECRET=your_jwt_refresh_secret_key
+
+# Token Expiration
+JWT_EXPIRES_IN=1h
+JWT_REFRESH_EXPIRES_IN=7d
 
 ---
 

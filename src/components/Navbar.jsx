@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Profile_pic from './profile_pic'
 import Notification from './Notification'
 import Cart_icon from './Cart_icon'
-import Language_ico from './Language_ico'
+import Logout_btn from './Logout_btn'
 import Login_btn from './Login_btn'
 // import Login_form from './pages/Login_form'
 
@@ -71,17 +71,17 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
         </> 
         ):
         (
-          <>
+          <div className='w-full h-full bg-orange-700'>
                 <div className='w-[6em] h-full flex items-center justify-center object-cover'>
                   <Notification />
                 </div>
                 <div className='w-[6em] h-full flex items-center justify-center object-cover'>
                   <Cart_icon />
                 </div>
-                <div className='w-[8em] h-full flex items-center justify-center'>
-                  <Language_ico />
+                <div className='w-[8em] h-full flex items-center justify-center relative right-1'>
+                  <Logout_btn />
                 </div>
-          </>
+          </div>
         )}
 
       </div>

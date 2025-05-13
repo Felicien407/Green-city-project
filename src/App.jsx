@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LoginForm from './components/pages/Login_form'
 import Navbar from './components/Navbar'
 import Details from './components/pages/Details'
+import Cart from './components/pages/Cart'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<Home isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/login" element={<LoginFormWrapper />} />
             <Route path="/seedDetails" element={<Details />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Router>
       </div>

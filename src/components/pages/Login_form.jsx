@@ -1,10 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom' 
 import Google from "../../../public/icons/google.png"
 import Apple from "../../../public/icons/apple.png"
 
-const Login_form = () => {
+const Login_form = ({ onLogin }) => {
+  const navigate = useNavigate()
+
+  const handleSignUp = () => {
+    // You can add form validation here
+    onLogin()
+    navigate('/')
+
+  }
   return (
-    <div className='w-3/11 h-8/11 bg-gray-200 rounded-xl ring-2 ring-green-800 flex flex-col items-center justify-evenly'>
+    <div className='w-2/8 h-8/11 bg-gray-200 rounded-xl ring-1 ring-green-800 flex flex-col items-center justify-evenly'>
       <div className='w-full h-[3em]  flex items-center justify-center'>
         <h1 className='text-2xl text-green-600 font-bold'>Sign Up</h1>
       </div>
@@ -19,9 +28,9 @@ const Login_form = () => {
         <a href="" className='text-md font-medium relative left-[2.5em] text-pink-900 underline'>Having trouble signing Up?</a>
       </div>
       <div className='w-full h-[3.5em] flex items-center justify-center'>
-        <button className='w-10/12 h-10/12 text-lg font-medium bg-green-600 rounded-lg hover:bg-green-700 active:transform active:scale-97 transition duration-75'>Sign Up</button>
+        <button className='w-10/12 h-10/12 text-lg font-medium bg-green-600 rounded-lg hover:bg-green-700 active:transform active:scale-97 transition duration-75' onClick={handleSignUp}>Sign Up</button>
       </div>
-      <div className='w-full h-2/9  flex flex-col items-center justify-evenly'>
+      {/* <div className='w-full h-2/9  flex flex-col items-center justify-evenly'>
         <div className='w-9/11 h-3/9 ring-1 rounded-lg flex items-center justify-evenly'>
           <div className=' w-1/7 h-full flex items-center justify-center'>
             <img src={Google} alt="" className='w-[2.5em] h-[2.5em]'/>
@@ -39,7 +48,7 @@ const Login_form = () => {
             <p className='text-md'>Sign In with Apple</p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='w-full h-[2em] flex items-center justify-center'>
           <p className=''>Already have an account? <a href="" className='text-pink-900 font-medium underline'>Sign In</a></p>
       </div>

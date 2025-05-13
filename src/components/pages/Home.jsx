@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Hero from "../Hero"
 import Card from "./items/card"
 import SeedList from "./items/SeedList"
@@ -5,20 +6,24 @@ import Navbar from "../Navbar"
 import Testimonial from "./items/Testimonial"
 import Login_form from "./Login_form"
 
-const Home = () => {
+const Home = ({ isLoggedIn, setIsLoggedIn }) => {
+
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   return (
     <div className='w-full flex flex-col items-center'>
 
-      <div className="w-full h-screen bg-gray-200 flex items-center justify-center">
+      {/* <div className="w-full h-screen bg-gray-200 flex items-center justify-center">
       <Login_form />
-      </div>
+      </div> */}
 
       {/* <div className='w-full h-20 relative top-3 flex justify-center items-center z-50 overflow-hidden'>
-        <Navbar />
-      </div>
+        <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      </div> */}
 
 
-      <div className='w-full flex flex-col items-center justify-center mt-6'>
+      <div className='w-full flex flex-col items-center justify-center mt-[5rem]'>
         <Hero />
       </div>
 
@@ -99,7 +104,7 @@ const Home = () => {
 
       <div className="w-full h-[30em] bg-green-600 relative top-50">
 
-      </div> */}
+      </div>
 
     </div>
   )

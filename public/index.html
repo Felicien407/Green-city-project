@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Sign Up</h2>
-  <form id="signupForm">
+  <form id="signupForm" action="/signup"> 
     <input type="text" id="name" placeholder="Name" required><br><br>
     <input type="email" id="email" placeholder="Email" required><br><br>
     <input type="number" id="number" placeholder="number" required><br><br>
@@ -16,31 +16,24 @@
   </form>
 
   <p id="message"></p>
-
-  <script>
-    const form = document.getElementById('signupForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const number = document.getElementById('number').value;
-      const password = document.getElementById('password').value;
-
-      try {
-        const res = await fetch('/api/signup', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, number, password })
+ <script src="" >
+  const signupForm = document.getElementById('signupForm');
+signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(signupForm);
+    const data = Object.fromEntries(formData.entries());
+    try {
+        const response = await fetch('/api/auth/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
         });
-
-        const data = await res.json();
-        document.getElementById('message').innerText = data.message;
-
-      } catch (err) {
-        document.getElementById('message').innerText = 'Error: ' + err.message;
-      }
-    });
-  </script>
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+ </script>
 </body>
 </html>

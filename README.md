@@ -1,6 +1,6 @@
-# 🌱 SeedLink Platform
+# 🌱 SeedTrack Platform
 
-SeedLink is an online platform that connects individuals, schools, NGOs, and communities seeking tree plants with cooperatives, individuals, and organizations supplying seedlings across Rwanda.
+SeedTrack is an online platform that connects individuals, schools, NGOs, and communities seeking tree plants with cooperatives, individuals, and organizations supplying seedlings across Rwanda.
 
 ---
 
@@ -19,6 +19,7 @@ SeedLink is an online platform that connects individuals, schools, NGOs, and com
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React.js
 - TailwindCSS
 - React Router
@@ -26,6 +27,7 @@ SeedLink is an online platform that connects individuals, schools, NGOs, and com
 - Socket.IO Client
 
 ### Backend
+
 - Node.js
 - Express.js
 - MongoDB (MongoDB Atlas)
@@ -33,6 +35,7 @@ SeedLink is an online platform that connects individuals, schools, NGOs, and com
 - JWT Authentication
 
 ### Deployment
+
 - Frontend: Vercel
 - Backend: Render or Railway
 - Database: MongoDB Atlas
@@ -46,7 +49,6 @@ tree-link-platform/
 ├── server/ # Express Backend
 
 ---
-
 
 ---
 
@@ -80,3 +82,4 @@ GET    /api/trees                 # Fetch all listings
 POST   /api/trees                 # Create new tree listing (supplier only)
 POST   /api/messages              # Send a message
 GET    /api/messages/:userId     # Get messages between users
+```

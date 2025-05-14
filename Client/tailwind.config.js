@@ -4,7 +4,19 @@ import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        green: '#3cb815',
+        'light-green': '#c0eb7b',
+        orange: '#ff7e00',
+        'light-orange': '#f75f1d',
+        'text-color': '#1a2428',
+        'bg-color': '#ffffff',
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {

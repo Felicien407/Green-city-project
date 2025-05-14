@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { Camera, Mail, User } from "lucide-react";
@@ -19,6 +20,12 @@ const ProfilePage = () => {
       setSelectedImg(base64Image);
       await updateProfile({ profilePic: base64Image });
     };
+  };
+
+  const navigate = useNavigate();
+
+  const goToDashboard = () => {
+    navigate('/dashboard');
   };
 
   return (
@@ -96,6 +103,7 @@ const ProfilePage = () => {
               </div>
             </div>
           </div>
+          <button className="border p-2 rounded-lg" onClick={goToDashboard}>Back to Dashboard</button>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import SeedList from "./items/SeedList"
 import Navbar from "../Navbar"
 import Testimonial from "./items/Testimonial"
 import Login_form from "./Login_form"
+import Footer from '../Footer'
 
 const Home = ({ isLoggedIn, setIsLoggedIn }) => {
 
@@ -23,67 +24,17 @@ const Home = ({ isLoggedIn, setIsLoggedIn }) => {
       </div> */}
 
 
-      <div className='w-full flex flex-col items-center justify-center mt-[5rem]'>
+      <div className='w-full flex flex-col items-center justify-center mt-[7rem]'>
         <Hero />
       </div>
 
 
-      <div className="w-full h-66 mt-10 flex flex-col items-center justify-between">
+      {/* <div className="w-full h-66 mt-10 flex flex-col items-center justify-between">
         <h1 className="text-lg">Trusted by</h1>
         <div className="w-10/12 h-7/12 bg-gray-100 rounded-2xl"></div>
-      </div>
+      </div> */}
 
-
-      <div className="w-8/12 h-[456px] flex items-center justify-evenly bg-green-500 mt-20">
-        <div className="w-2/5 h-full bg-gray-900">
-
-        </div>
-        <div className="w-2/5 h-full bg-gray-900">
-
-        </div>
-      </div>
-
-
-      <div className="w-full h-[30em] bg-gray-200 relative mt-30 flex flex-col items-center justify-evenly">
-        <p className="text-4xl font-bold">This is how it works</p>
-
-        <div className="w-9/12 h-[20em] flex items-center justify-evenly">
-          <div className="w-[14em] h-[18em] flex flex-col items-center justify-center">
-            <div className="w-[10em] h-[10em] bg-gray-700 rounded-full">
-
-            </div>
-            <div>
-              <p className="font-semibold text-xl text-center">Choose a Seed</p>
-            </div>
-
-          </div>
-          <div className="w-[14em] h-[18em] flex flex-col items-center justify-center">
-            <div className="w-[10em] h-[10em] bg-gray-700 rounded-full">
-
-            </div>
-            <div>
-              <p className="font-semibold text-xl text-center">Choose Talk with the suppliers</p>
-            </div>
-          </div>
-          <div className="w-[14em] h-[18em] flex flex-col items-center justify-center">
-            <div className="w-[10em] h-[10em] bg-gray-700 rounded-full">
-
-            </div>
-            <div>
-              <p className="font-semibold text-xl text-center">Choose a Seed</p>
-            </div>
-          </div>
-          <div className="w-[14em] h-[18em] flex flex-col items-center justify-center">
-            <div className="w-[10em] h-[10em] bg-gray-700 rounded-full">
-
-            </div>
-            <div>
-              <p className="font-semibold text-xl text-center">Choose a Seed</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    
 
       <div className="relative w-10/12 h-auto mt-20 flex flex-col items-center justify-evenly">
         <div className="w-10/12 h-[6em] ">
@@ -103,7 +54,7 @@ const Home = ({ isLoggedIn, setIsLoggedIn }) => {
       </div>
 
       <div className="w-full h-[30em] bg-green-600 relative top-50">
-
+        <Footer />
       </div>
 
     </div>

@@ -28,10 +28,6 @@ const Details = () => {
       <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-100">
          <div className="w-10/12 h-10/12 bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-evenly">
             {/* This is the navigation of the cart when the user wanna see his cart */}
-         <div className='w-full h-1/11 ring-2 ring-b-gray-300'>
-            <hr />
-            
-         </div>
 
             <div className='w-full h-10/12 flex items-center justify-evenly'>
                <div className='w-2/5 h-4/5 rounded-xl'>

@@ -67,7 +67,7 @@ const Card = ({ image, name, short_d }) => {
         </div>
         <div className='w-full h-[2.5em] flex items-center justify-center'>
           <div className='w-9/11 h-12/12 bg-white rounded-full flex items-center justify-end'>
-            <Link to="/seedDetails" state={{ image, name, short_d }} className='w-full h-full flex items-center justify-center'>
+            <Link to="/seedDetails" state={{ image, name, short_d }} className='w-9/11 h-full flex items-center justify-center'>
               <Button>Detail</Button>
             </Link>
           </div>

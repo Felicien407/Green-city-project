@@ -24,10 +24,10 @@ function App() {
 
   return (
     <>
-      <div className='w-full h-screen bg-gray-100 overflow-x-hidden flex flex-col'> {/* This is the whole application */}
+      <div className='w-full h-screen overflow-x-hidden flex flex-col items-center justify-between'> {/* This is the whole application */}
         {/* This is the navbar */}
         <Router>
-          <div className='w-full h-20 relative top-[2.6em] flex justify-center items-center z-50 overflow-hidden'>
+          <div className='w-full h-20 relative flex justify-center items-center z-50 overflow-hidden'>
             <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           </div>
           <Routes>
@@ -35,6 +35,11 @@ function App() {
             <Route path="/login" element={<LoginFormWrapper />} />
             <Route path="/seedDetails" element={<Details />} />
             <Route path="/cart" element={<Cart />} />
+            {/* <Route
+              path="/cart"
+              element={isLoggedIn ? <Cart /> : <Navigate to="/login" replace />}
+            /> */}
+
           </Routes>
         </Router>
       </div>
